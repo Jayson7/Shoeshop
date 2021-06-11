@@ -22,8 +22,8 @@ def cartview(request):
 # add cart
 def addcart(request):
       
-      
-      sess_pro_id = request.session.get("id")
+      ids = request.get("iid")
+      sess_pro_id = request.session.get("ids")
       print(sess_pro_id)      
       # data = json.loads(request.body)
 
