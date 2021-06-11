@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ubuntu font family -->
+    
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <!-- ends -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Place</title>
+    <!-- carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <!-- carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- modified css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+
+<header>
+    <nav class="navbar navbar-expand-xl navbar-light  fixed -top " id="nav">
+        <a class="navbar-brand " href="#" id="logo">SHOES PLACE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="  navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+                <li class="nav-item mr-4 active">
+                    <a class="nav-link" href="#" id="link">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link" href="#" id="link">SHOP</a>
+                </li>
+
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="#" id="link">DISCOUNTS</a>
+                </li>
+
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="#" id="link">EN ROUTE</a>
+                </li>
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="#" id="link">CONTACT</a>
+                </li>
+
+
+                {% if user.is_authenticated %}
+
+
+
+
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="#" id="link">{{user.username}}</a>
+                </li>
+
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="{% url 'logout' %}" id="link">LOG OUT</a>
+                </li>
+                {% else %}
+
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="{% url 'login' %}" id="link">LOGIN</a>
+                </li>
+
+                <!-- 
+                <li class="nav-item  mr-3 ">
+                    <a class="nav-link " href="" id="link">LOGIN</a>
+                </li> -->
+                {% endif %}
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn  my-2 my-sm-0" id="nav-button" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+</header>
+
+<body>
+    <!-- section1 -->
+
+    <div class="section1">
+
+        <div class="cont1">
+            <div class="img">
+
+            </div>
+            <div class="text">
+                <h1>Let us activate </h1>
+                <h4>your style with elegance</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis possimus magni sunt illum ducimus beatae repudiandae aperiam unde neque ipsa consectetur nobis rem ad at ea recusandae, porro expedita?</p>
+                <button class="btn  "> Expore</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ends -->
+    <!-- ******************************section 2**************** -->
+    <div class="section2">
+        <div class="containers">
+            <h1>Our footwears are built with maximum qualities</h1>
+            <h4>You deserve more than enough </h4>
+            <button class="btn">Shop Now</button>
+        </div>
+
+    </div>
+
+    <!-- ends -->
+    <!-- *********************** section3 ****************** -->
+    <div class="section3">
+        <div class="cards-container">
+            {% for p in product %}
+            <div class="boxs1">
+                <div class="cards-header">
+                    <img src="{{ p.poster.url}}" alt="">
+                </div>
+                <div class="cards-body">
+                    <h1>{{p.name}}</h1>
+                </div>
+                <div class="price">
+                    <h5>${{p.price}}</h5>
+                </div>
+                <div class="cards-footer">
+                    <div class="stars">
+
+                        <i class="fa fa-star" aria-hidden="true">     </i>
+                        <i class="fa fa-star" aria-hidden="true">     </i>
+                        <i class="fa fa-star" aria-hidden="true">     </i><i class="fa fa-star" aria-hidden="true">     </i>
+                        <i class="fa fa-star" aria-hidden="true">     </i>
+
+                    </div>
+                    <button><a data-action="add" target="_blank" data-product="{{ p.id }}" class="update-cart" href="{% url 'addcart' %}"> Add to cart</a> </button>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- **********************************sidebars section ********************* -->
+
+            <div class="sidebars">
+
+                <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> </a>
+                <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i> </a>
+                <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                <a href="{% url 'cartview' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <div class="carts-logs"></div>
+                </a>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- ********************** endsidebars section ************************** -->
+
+    </div>
+
+    </div>
+
+    <!-- ends -->
+
+</body>
+<script src="{% static 'cart.js' %}"></script>
+
+</html>

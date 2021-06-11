@@ -1,0 +1,393 @@
+body {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+    background-color: #e3e4e6;
+    overflow-x: hidden;
+}
+
+
+/* header and its contents */
+
+
+/* **************************** desktop versions********************************** */
+
+@media (min-width: 800px) {
+    #nav {
+        background: #2b2e4a;
+    }
+    #logo {
+        font-weight: 900;
+        font-family: "Ubuntu";
+        color: #e84545;
+        font-size: 2rem;
+    }
+    #link {
+        font-weight: 700;
+        font-family: "Ubuntu";
+        color: #fff;
+    }
+    #nav-button {
+        border: #53354a 1px solid;
+        color: #903749;
+        background-color: none;
+    }
+    #nav-button:hover {
+        background-color: #53354a;
+    }
+    /* ends */
+    /* //////////////////////////////////////////// */
+    /* section1 begins */
+    .cont1 {
+        width: 100%;
+        background-color: #e3e4e6;
+        display: flex;
+        flex-direction: row;
+        flex-basis: 1;
+        flex-wrap: wrap;
+        height: 105vh;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+    }
+    .img {
+        width: 40%;
+        background: url("../static/images/1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 105vh;
+    }
+    .text {
+        position: relative;
+        left: 0;
+        width: 60%;
+        text-align: center;
+    }
+    .text h1 {
+        font-size: 5rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+        color: #903749;
+    }
+    .text h4 {
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+    }
+    .text button {
+        font-size: 1.5rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+        background-color: #53354a;
+        margin-top: 5vh;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .text p {
+        display: grid;
+        padding-right: 30px;
+        padding-left: 30px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+        font-family: "Poppins";
+    }
+    /* ends */
+    /* ************************sidebars **************** */
+    .sidebars a {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: greenyellow;
+    }
+    .sidebars {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #e3e4e6;
+        width: calc(100vw - 95vw);
+        height: calc(100vh - 70vh);
+        text-align: center;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 10;
+        top: 30%;
+        right: 0%;
+    }
+    /* ends */
+}
+
+
+/* **************************** mobile versions********************************** */
+
+@media (max-width: 799px) {
+    /* ************************sidebars **************** */
+    .sidebars a {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: greenyellow;
+    }
+    .sidebars {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #e3e4e6;
+        width: calc(100vw - 90vw);
+        height: calc(100vh - 70vh);
+        text-align: center;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 10;
+        top: 30%;
+        right: 0%;
+    }
+    /* ends */
+}
+
+@media (max-width: 750px) {
+    /* ************************sidebars **************** */
+    .sidebars a {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: greenyellow;
+    }
+    .sidebars {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #e3e4e6;
+        width: calc(100vw - 85vw);
+        height: calc(100vh - 70vh);
+        text-align: center;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 10;
+        top: 30%;
+        right: 0%;
+    }
+    /* ends */
+}
+
+@media (max-width: 799px) {
+    .section1 {
+        position: relative;
+        height: 180vh;
+        width: 100%;
+    }
+    #nav {
+        background: #2b2e4a;
+    }
+    #logo {
+        font-weight: 900;
+        font-family: "Ubuntu";
+        color: #e84545;
+        font-size: 2rem;
+    }
+    #link {
+        font-weight: 700;
+        font-family: "Ubuntu";
+        color: #fff;
+    }
+    #nav-button {
+        border: #53354a 1px solid;
+        color: #903749;
+        background-color: none;
+    }
+    #nav-button:hover {
+        background-color: #53354a;
+    }
+    /* ends */
+    /* ////////////////////////////////////////////////////////////////////// */
+    /* section1 begins */
+    .cont1 {
+        width: 100%;
+        background-color: #e3e4e6;
+        display: grid;
+        grid-template-columns: minmax(1fr, 1fr);
+        height: 150vh;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .img {
+        height: 100vh;
+        width: 100%;
+        background: url("../static/images/1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .text {
+        position: relative;
+        left: 0;
+        width: 100%;
+        margin-top: 4vh;
+        height: 50vh;
+        text-align: center;
+    }
+    .text h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+        color: #903749;
+    }
+    .text h4 {
+        font-size: 2rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+    }
+    .text button {
+        font-size: 1.5rem;
+        font-weight: 800;
+        font-family: "Ubuntu";
+        background-color: #53354a;
+        margin-top: 5vh;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .text p {
+        display: grid;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+        font-family: "Poppins";
+    }
+    /* ends */
+}
+
+
+/* *************************************Multi platform codes ************************** */
+
+
+/* **************section2 **************** */
+
+.section2 {
+    width: 100%;
+    height: 100vh;
+    background: url("../static/images/shoes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.section2 .containers {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.containers h1 {
+    font-size: 2.5rem;
+    text-shadow: 50px;
+    font-weight: 600;
+}
+
+.containers h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 4vh;
+}
+
+.containers button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #e3e4e6;
+    margin-top: 8vh;
+    background-color: #903749;
+}
+
+
+/* ends */
+
+
+/* *****************section3 **************** */
+
+.section3 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: space-around;
+}
+
+.boxs1 {
+    width: 300px;
+    height: 550px;
+    background-color: rgb(68, 68, 124);
+    border: 0px solid;
+    z-index: 4;
+    margin: 10px;
+    border-radius: 7px;
+    box-shadow: 10px #000;
+}
+
+.cards-header img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.cards-body {
+    text-align: center;
+    color: chartreuse;
+}
+
+.cards-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.cards-footer button {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.price {
+    text-align: center;
+}
+
+.price h5 {
+    font-size: 25px;
+    color: greenyellow;
+}
+
+.cards-footer i {
+    color: yellow;
+}
