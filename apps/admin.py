@@ -1,18 +1,19 @@
 from django.contrib import admin
-# from django.contrib.auth.models import Group
-from .models import Product, Cartitem
-# Register your models here.
-class ProductDesigns(admin.ModelAdmin):
-      list_display = ("name", "price")
 
+# from django.contrib.auth.models import Group
+from .models import *
+
+# Register your models here.
 
 
 class CartitemDesigns(admin.ModelAdmin):
-      list_display = ("name", "id")
+    list_display = ("cart", "id")
 
 
-admin.site.register(Product, ProductDesigns)
-admin.site.register(Cartitem, CartitemDesigns)
+admin.site.register(Products)
+admin.site.register(CartProduct, CartitemDesigns)
 
 # admin title
-admin.site.site_header= "Shoes Place"
+admin.site.site_header = "Shoes Place"
+
+admin.site.register([Category, Cart, Order, Customer])
