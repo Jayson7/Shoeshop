@@ -189,7 +189,7 @@ class CheckoutView(CreateView):
             elif pm == "Esewa":
                 return redirect(reverse("esewarequest") + "?o_id=" + str(order.id))
         else:
-            return redirect("ecomapp:home")
+            return redirect("home")
         return super().form_valid(form)
 
 
